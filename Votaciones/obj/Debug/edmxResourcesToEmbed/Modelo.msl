@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VotacionBaresModelStoreContainer" CdmEntityContainer="VotacionBaresEntities">
+    <FunctionImportMapping FunctionImportName="getVotacionByUser" FunctionName="VotacionBaresModel.Store.getVotacionByUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VotacionBaresModel.getVotacionByUser_Result">
+          <ScalarProperty Name="idvotacion" ColumnName="idvotacion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Votacion" ColumnName="Votacion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="crearSemana" FunctionName="VotacionBaresModel.Store.crearSemana" />
+    <FunctionImportMapping FunctionImportName="Restaurante_Ganador" FunctionName="VotacionBaresModel.Store.Restaurante_Ganador">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VotacionBaresModel.Restaurante_Ganador_Result">
+          <ScalarProperty Name="IdBar" ColumnName="IdBar" />
+          <ScalarProperty Name="Votos" ColumnName="Votos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="setVotacionComensalSemana" FunctionName="VotacionBaresModel.Store.setVotacionComensalSemana" />
+    <FunctionImportMapping FunctionImportName="Comensal_Ganador" FunctionName="VotacionBaresModel.Store.Comensal_Ganador">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VotacionBaresModel.Comensal_Ganador_Result">
+          <ScalarProperty Name="IdComensal" ColumnName="IdComensal" />
+          <ScalarProperty Name="Votos" ColumnName="Votos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Comensal_Perdedor" FunctionName="VotacionBaresModel.Store.Comensal_Perdedor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VotacionBaresModel.Comensal_Perdedor_Result">
+          <ScalarProperty Name="IdComensal" ColumnName="IdComensal" />
+          <ScalarProperty Name="Votos" ColumnName="Votos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Bar">
+      <EntityTypeMapping TypeName="VotacionBaresModel.Bar">
+        <MappingFragment StoreEntitySet="Bar">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idBar" ColumnName="idBar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comensales">
+      <EntityTypeMapping TypeName="VotacionBaresModel.Comensales">
+        <MappingFragment StoreEntitySet="Comensales">
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="rol" ColumnName="rol" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="IdComensal" ColumnName="IdComensal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SemanaComensal">
+      <EntityTypeMapping TypeName="VotacionBaresModel.SemanaComensal">
+        <MappingFragment StoreEntitySet="SemanaComensal">
+          <ScalarProperty Name="ganador" ColumnName="ganador" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idComensal" ColumnName="idComensal" />
+          <ScalarProperty Name="idSemana" ColumnName="idSemana" />
+          <ScalarProperty Name="idSemanaComensal" ColumnName="idSemanaComensal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SemanaInforme">
+      <EntityTypeMapping TypeName="VotacionBaresModel.SemanaInforme">
+        <MappingFragment StoreEntitySet="SemanaInforme">
+          <ScalarProperty Name="idRestaurante_Ganador" ColumnName="idRestaurante_Ganador" />
+          <ScalarProperty Name="idComensal_Omega" ColumnName="idComensal_Omega" />
+          <ScalarProperty Name="idComensal_Alfa" ColumnName="idComensal_Alfa" />
+          <ScalarProperty Name="numSemana" ColumnName="numSemana" />
+          <ScalarProperty Name="idSemanaInforme" ColumnName="idSemanaInforme" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Semanas">
+      <EntityTypeMapping TypeName="VotacionBaresModel.Semanas">
+        <MappingFragment StoreEntitySet="Semanas">
+          <ScalarProperty Name="cerrada" ColumnName="cerrada" />
+          <ScalarProperty Name="numSemana" ColumnName="numSemana" />
+          <ScalarProperty Name="fechaFin" ColumnName="fechaFin" />
+          <ScalarProperty Name="fechaIni" ColumnName="fechaIni" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idSemana" ColumnName="idSemana" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VotacionesSemanales">
+      <EntityTypeMapping TypeName="VotacionBaresModel.VotacionesSemanales">
+        <MappingFragment StoreEntitySet="VotacionesSemanales">
+          <ScalarProperty Name="vetacion" ColumnName="vetacion" />
+          <ScalarProperty Name="votacion" ColumnName="votacion" />
+          <ScalarProperty Name="idSemana" ColumnName="idSemana" />
+          <ScalarProperty Name="idBar" ColumnName="idBar" />
+          <ScalarProperty Name="idComensal" ColumnName="idComensal" />
+          <ScalarProperty Name="idVotacion" ColumnName="idVotacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="cerrarSemana" FunctionName="VotacionBaresModel.Store.cerrarSemana" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,200 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.navbar-header img {
+    height: 50px;
+    margin-right: 5px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.tab-content ul, .tab-content li {
+    width: 100%;
+    list-style-type: georgian;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+
+
+time.icon {
+    font-size: 1em; /* change icon size */
+    display: block;
+    position: relative;
+    width: 11em;
+    height: 13em;
+    background-color: white;
+    border: 1px inset red;
+    border-radius: 0.6em;
+    box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff, 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: black 10px 10px 10px;
+}
+
+.semanaNumber {
+    font-size: 8em;
+    display: block;
+    top: -100px;
+    position: relative;
+    color: blue;
+}
+
+.semanaRange {
+    font-size: 18px;
+    color: #152ef6;
+}
+
+.containerSemanaClosed {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.backgroundLooser {
+    background: linear-gradient(322deg, #1b1b1c, #ff0000);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 41%;
+    }
+
+    50% {
+        background-position: 100% 60%;
+    }
+
+    100% {
+        background-position: 0% 41%;
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 41%;
+    }
+
+    50% {
+        background-position: 100% 60%;
+    }
+
+    100% {
+        background-position: 0% 41%;
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 41%;
+    }
+
+    50% {
+        background-position: 100% 60%;
+    }
+
+    100% {
+        background-position: 0% 41%;
+    }
+}
+
+.backgroundwin {
+    background: linear-gradient(322deg, #c7fbc1, #b0fbfb);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 41%;
+    }
+
+    50% {
+        background-position: 100% 60%;
+    }
+
+    100% {
+        background-position: 0% 41%;
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 41%;
+    }
+
+    50% {
+        background-position: 100% 60%;
+    }
+
+    100% {
+        background-position: 0% 41%;
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 41%;
+    }
+
+    50% {
+        background-position: 100% 60%;
+    }
+
+    100% {
+        background-position: 0% 41%;
+    }
+}
+
+
+.transparent{
+    position:fixed;
+    width:100%;
+    height:1000px !important;
+    opacity: 0.5;
+    filter: alpha(opacity=50); 
+    background-color:#b0fbfb;
+    top:0;
+    left:0;
+    z-index:100;
+}

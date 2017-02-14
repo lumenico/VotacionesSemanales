@@ -1,0 +1,84 @@
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\roslyn\csc.exe
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\roslyn\System.Collections.Immutable.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\roslyn\vbc.exe
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\roslyn\VBCSCompiler.exe
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\roslyn\VBCSCompiler.exe.config
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Votaciones.dll.config
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Votaciones.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Votaciones.pdb
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Antlr3.Runtime.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\AspNet.ScriptManager.bootstrap.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\AspNet.ScriptManager.jQuery.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Microsoft.AspNet.FriendlyUrls.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Microsoft.ScriptManager.MSAjax.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Microsoft.ScriptManager.WebForms.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Microsoft.Web.Infrastructure.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Newtonsoft.Json.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\System.Web.Optimization.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\WebGrease.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\System.Web.Optimization.xml
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Antlr3.Runtime.pdb
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Newtonsoft.Json.xml
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\Microsoft.AspNet.FriendlyUrls.xml
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\es\System.Web.Optimization.resources.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\obj\Debug\Votaciones.csprojResolveAssemblyReference.cache
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\obj\Debug\Votaciones.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\obj\Debug\Votaciones.pdb
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\EntityFramework.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\EntityFramework.SqlServer.dll
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\EntityFramework.xml
+c:\users\jose gonzalez moreno\documents\visual studio 2015\Projects\Votaciones\Votaciones\bin\EntityFramework.SqlServer.xml
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\csc.exe
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\System.Collections.Immutable.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\System.Reflection.Metadata.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\vbc.exe
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\VBCSCompiler.exe
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\VBCSCompiler.exe.config
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Votaciones.dll.config
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Votaciones.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Votaciones.pdb
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Antlr3.Runtime.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\AspNet.ScriptManager.bootstrap.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\AspNet.ScriptManager.jQuery.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\EntityFramework.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\EntityFramework.SqlServer.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\log4net.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Microsoft.ScriptManager.WebForms.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Microsoft.Web.Infrastructure.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Newtonsoft.Json.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\System.Web.Optimization.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\WebGrease.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\EntityFramework.xml
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\EntityFramework.SqlServer.xml
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\log4net.xml
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\System.Web.Optimization.xml
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Antlr3.Runtime.pdb
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Newtonsoft.Json.xml
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\es\System.Web.Optimization.resources.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\obj\Debug\Votaciones.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Votaciones\Votaciones\obj\Debug\Votaciones.dll
+C:\inetpub\wwwroot\Votaciones\Votaciones\obj\Debug\Votaciones.pdb

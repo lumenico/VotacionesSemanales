@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="227716acde32448eabdc3a9c1eb30a7f" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="VotacionBaresModel.Bar" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="VotacionBaresModel.Comensales" Width="1.5" PointX="0.75" PointY="10" />
+        <EntityTypeShape EntityType="VotacionBaresModel.SemanaComensal" Width="1.5" PointX="3" PointY="3.875" />
+        <EntityTypeShape EntityType="VotacionBaresModel.SemanaInforme" Width="1.5" PointX="5.75" PointY="2" />
+        <EntityTypeShape EntityType="VotacionBaresModel.Semanas" Width="1.5" PointX="0.75" PointY="3.875" />
+        <EntityTypeShape EntityType="VotacionBaresModel.VotacionesSemanales" Width="1.5" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="VotacionBaresModel.FK_VotacionesSemanales_Bar" />
+        <AssociationConnector Association="VotacionBaresModel.FK_SemanaComensal_Comensales" />
+        <AssociationConnector Association="VotacionBaresModel.FK_VotacionesSemanales_Comensales" />
+        <AssociationConnector Association="VotacionBaresModel.FK_SemanaComensal_Semanas" />
+        <AssociationConnector Association="VotacionBaresModel.FK_VotacionesSemanales_Semanas" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

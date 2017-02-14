@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VotacionBaresModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="VotacionBaresEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="crearSemana" />
+    <FunctionImport Name="getVotacionByUser" ReturnType="Collection(VotacionBaresModel.getVotacionByUser_Result)">
+      <Parameter Name="idcomensal" Mode="In" Type="Int32" />
+      <Parameter Name="idsemana" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="setVotacionComensalSemana" ReturnType="Collection(Int32)">
+      <Parameter Name="votacion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Restaurante_Ganador" IsComposable="true" ReturnType="Collection(VotacionBaresModel.Restaurante_Ganador_Result)">
+      <Parameter Name="NUMERO_SEMANA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Comensal_Ganador" IsComposable="true" ReturnType="Collection(VotacionBaresModel.Comensal_Ganador_Result)">
+      <Parameter Name="NUMERO_SEMANA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Comensal_Perdedor" IsComposable="true" ReturnType="Collection(VotacionBaresModel.Comensal_Perdedor_Result)">
+      <Parameter Name="NUMERO_SEMANA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Bar" EntityType="VotacionBaresModel.Bar" />
+    <EntitySet Name="Comensales" EntityType="VotacionBaresModel.Comensales" />
+    <EntitySet Name="SemanaComensal" EntityType="VotacionBaresModel.SemanaComensal" />
+    <EntitySet Name="SemanaInforme" EntityType="VotacionBaresModel.SemanaInforme" />
+    <EntitySet Name="Semanas" EntityType="VotacionBaresModel.Semanas" />
+    <EntitySet Name="VotacionesSemanales" EntityType="VotacionBaresModel.VotacionesSemanales" />
+    <AssociationSet Name="FK_VotacionesSemanales_Bar" Association="VotacionBaresModel.FK_VotacionesSemanales_Bar">
+      <End Role="Bar" EntitySet="Bar" />
+      <End Role="VotacionesSemanales" EntitySet="VotacionesSemanales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SemanaComensal_Comensales" Association="VotacionBaresModel.FK_SemanaComensal_Comensales">
+      <End Role="Comensales" EntitySet="Comensales" />
+      <End Role="SemanaComensal" EntitySet="SemanaComensal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VotacionesSemanales_Comensales" Association="VotacionBaresModel.FK_VotacionesSemanales_Comensales">
+      <End Role="Comensales" EntitySet="Comensales" />
+      <End Role="VotacionesSemanales" EntitySet="VotacionesSemanales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SemanaComensal_Semanas" Association="VotacionBaresModel.FK_SemanaComensal_Semanas">
+      <End Role="Semanas" EntitySet="Semanas" />
+      <End Role="SemanaComensal" EntitySet="SemanaComensal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VotacionesSemanales_Semanas" Association="VotacionBaresModel.FK_VotacionesSemanales_Semanas">
+      <End Role="Semanas" EntitySet="Semanas" />
+      <End Role="VotacionesSemanales" EntitySet="VotacionesSemanales" />
+    </AssociationSet>
+    <FunctionImport Name="cerrarSemana" ReturnType="Collection(Int32)">
+      <Parameter Name="idSemana" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="getVotacionByUser_Result">
+    <Property Type="Int32" Name="idvotacion" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="Votacion" Nullable="false" />
+    <Property Type="String" Name="descripcion" Nullable="true" MaxLength="2000" />
+  </ComplexType>
+  <ComplexType Name="Restaurante_Ganador_Result">
+    <Property Type="Int32" Name="IdBar" Nullable="false" />
+    <Property Type="Int32" Name="Votos" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Comensal_Ganador_Result">
+    <Property Type="Int32" Name="IdComensal" Nullable="false" />
+    <Property Type="Int32" Name="Votos" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Comensal_Perdedor_Result">
+    <Property Type="Int32" Name="IdComensal" Nullable="false" />
+    <Property Type="Int32" Name="Votos" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Bar">
+    <Key>
+      <PropertyRef Name="idBar" />
+    </Key>
+    <Property Name="idBar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="VotacionesSemanales" Relationship="VotacionBaresModel.FK_VotacionesSemanales_Bar" FromRole="Bar" ToRole="VotacionesSemanales" />
+  </EntityType>
+  <EntityType Name="Comensales">
+    <Key>
+      <PropertyRef Name="IdComensal" />
+    </Key>
+    <Property Name="IdComensal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="rol" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SemanaComensal" Relationship="VotacionBaresModel.FK_SemanaComensal_Comensales" FromRole="Comensales" ToRole="SemanaComensal" />
+    <NavigationProperty Name="VotacionesSemanales" Relationship="VotacionBaresModel.FK_VotacionesSemanales_Comensales" FromRole="Comensales" ToRole="VotacionesSemanales" />
+  </EntityType>
+  <EntityType Name="SemanaComensal">
+    <Key>
+      <PropertyRef Name="idSemanaComensal" />
+    </Key>
+    <Property Name="idSemanaComensal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idSemana" Type="Int32" Nullable="false" />
+    <Property Name="idComensal" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ganador" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Comensales" Relationship="VotacionBaresModel.FK_SemanaComensal_Comensales" FromRole="SemanaComensal" ToRole="Comensales" />
+    <NavigationProperty Name="Semanas" Relationship="VotacionBaresModel.FK_SemanaComensal_Semanas" FromRole="SemanaComensal" ToRole="Semanas" />
+  </EntityType>
+  <EntityType Name="SemanaInforme">
+    <Key>
+      <PropertyRef Name="idSemanaInforme" />
+    </Key>
+    <Property Name="idSemanaInforme" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numSemana" Type="Int32" Nullable="false" />
+    <Property Name="idComensal_Alfa" Type="Int32" />
+    <Property Name="idComensal_Omega" Type="Int32" />
+    <Property Name="idRestaurante_Ganador" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Semanas">
+    <Key>
+      <PropertyRef Name="idSemana" />
+    </Key>
+    <Property Name="idSemana" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fechaIni" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaFin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="numSemana" Type="Int32" Nullable="false" />
+    <Property Name="cerrada" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="SemanaComensal" Relationship="VotacionBaresModel.FK_SemanaComensal_Semanas" FromRole="Semanas" ToRole="SemanaComensal" />
+    <NavigationProperty Name="VotacionesSemanales" Relationship="VotacionBaresModel.FK_VotacionesSemanales_Semanas" FromRole="Semanas" ToRole="VotacionesSemanales" />
+  </EntityType>
+  <EntityType Name="VotacionesSemanales">
+    <Key>
+      <PropertyRef Name="idVotacion" />
+    </Key>
+    <Property Name="idVotacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idComensal" Type="Int32" Nullable="false" />
+    <Property Name="idBar" Type="Int32" Nullable="false" />
+    <Property Name="idSemana" Type="Int32" Nullable="false" />
+    <Property Name="votacion" Type="Boolean" Nullable="false" />
+    <Property Name="vetacion" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Bar" Relationship="VotacionBaresModel.FK_VotacionesSemanales_Bar" FromRole="VotacionesSemanales" ToRole="Bar" />
+    <NavigationProperty Name="Comensales" Relationship="VotacionBaresModel.FK_VotacionesSemanales_Comensales" FromRole="VotacionesSemanales" ToRole="Comensales" />
+    <NavigationProperty Name="Semanas" Relationship="VotacionBaresModel.FK_VotacionesSemanales_Semanas" FromRole="VotacionesSemanales" ToRole="Semanas" />
+  </EntityType>
+  <Association Name="FK_VotacionesSemanales_Bar">
+    <End Type="VotacionBaresModel.Bar" Role="Bar" Multiplicity="1" />
+    <End Type="VotacionBaresModel.VotacionesSemanales" Role="VotacionesSemanales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bar">
+        <PropertyRef Name="idBar" />
+      </Principal>
+      <Dependent Role="VotacionesSemanales">
+        <PropertyRef Name="idBar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SemanaComensal_Comensales">
+    <End Type="VotacionBaresModel.Comensales" Role="Comensales" Multiplicity="1" />
+    <End Type="VotacionBaresModel.SemanaComensal" Role="SemanaComensal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comensales">
+        <PropertyRef Name="IdComensal" />
+      </Principal>
+      <Dependent Role="SemanaComensal">
+        <PropertyRef Name="idComensal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VotacionesSemanales_Comensales">
+    <End Type="VotacionBaresModel.Comensales" Role="Comensales" Multiplicity="1" />
+    <End Type="VotacionBaresModel.VotacionesSemanales" Role="VotacionesSemanales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comensales">
+        <PropertyRef Name="IdComensal" />
+      </Principal>
+      <Dependent Role="VotacionesSemanales">
+        <PropertyRef Name="idComensal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SemanaComensal_Semanas">
+    <End Type="VotacionBaresModel.Semanas" Role="Semanas" Multiplicity="1" />
+    <End Type="VotacionBaresModel.SemanaComensal" Role="SemanaComensal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Semanas">
+        <PropertyRef Name="idSemana" />
+      </Principal>
+      <Dependent Role="SemanaComensal">
+        <PropertyRef Name="idSemana" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VotacionesSemanales_Semanas">
+    <End Type="VotacionBaresModel.Semanas" Role="Semanas" Multiplicity="1" />
+    <End Type="VotacionBaresModel.VotacionesSemanales" Role="VotacionesSemanales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Semanas">
+        <PropertyRef Name="idSemana" />
+      </Principal>
+      <Dependent Role="VotacionesSemanales">
+        <PropertyRef Name="idSemana" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
