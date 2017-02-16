@@ -22,6 +22,15 @@ namespace Votaciones {
         protected global::Votaciones.Controls.SemanaActual SemanaActual;
         
         /// <summary>
+        /// Control liVetaciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liVetaciones;
+        
+        /// <summary>
         /// Control imagenResultadoVotacion.
         /// </summary>
         /// <remarks>
@@ -31,40 +40,31 @@ namespace Votaciones {
         protected global::System.Web.UI.HtmlControls.HtmlImage imagenResultadoVotacion;
         
         /// <summary>
-        /// Control upVotacion.
+        /// Control ctrlVotaciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upVotacion;
+        protected global::Votaciones.Controls.Vxtaciones ctrlVotaciones;
         
         /// <summary>
-        /// Control gvVotaciones.
+        /// Control divVvetaciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater gvVotaciones;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divVvetaciones;
         
         /// <summary>
-        /// Control btnEnviarVotacion.
+        /// Control ctrlVetaciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnviarVotacion;
-        
-        /// <summary>
-        /// Control updateProgress.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdateProgress updateProgress;
+        protected global::Votaciones.Controls.Vxtaciones ctrlVetaciones;
         
         /// <summary>
         /// Control resultados.

@@ -11,7 +11,8 @@ namespace Votaciones.Core
     public class SemanasObserver
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        
+       
+
         private static Semanas _semanaActual;
         public static Semanas semanaActual
         {
@@ -36,6 +37,11 @@ namespace Votaciones.Core
 
         public static void semanaHandler()
         {
+            using (VotacionBaresEntities ve = new Votaciones.VotacionBaresEntities())
+            {
+                semanaActual = ve.Semanas.Where(t => t.fechaIni <= DateTime.Now &&
+                                              t.fechaFin >= DateTime.Now).FirstOrDefault<Semanas>();
+            }
             ThreadStart ts1 = new ThreadStart(aperturaAutomaticaDeSemana);
             Thread tapertura = new Thread(ts1);
             tapertura.Start();
@@ -52,14 +58,14 @@ namespace Votaciones.Core
                 {
                     using (VotacionBaresEntities ve = new Votaciones.VotacionBaresEntities())
                     {
-                        semanaActual =  ve.Semanas.Where(t => t.fechaIni <= DateTime.Now &&
-                                                t.fechaFin >= DateTime.Now).FirstOrDefault<Semanas>();
+                       
                         var semanaCreada = ve.VotacionesSemanales.Where(t => t.idSemana == semanaActual.idSemana).FirstOrDefault();
                         if (semanaCreada == null)
                         {
                             try
                             {
                                 ve.crearSemana();
+                                update();
                             }
                             catch  { }
                         }
@@ -86,9 +92,10 @@ namespace Votaciones.Core
                             using (VotacionBaresEntities ve = new Votaciones.VotacionBaresEntities())
                             {
                                 ve.cerrarSemana(semanaActual.idSemana);
-                                SemanasObserver.update();                       
+                                update();                       
                             }
-                            CurrentUser.set(CurrentUser.comensal.nombre);
+                            if(((CurrentUser)HttpContext.Current.Session[GlobalConsts.C_CURRENTUSER]) != null)
+                                ((CurrentUser)HttpContext.Current.Session[GlobalConsts.C_CURRENTUSER]).set(((CurrentUser)HttpContext.Current.Session[GlobalConsts.C_CURRENTUSER]).comensal.nombre);
                         }
                     
                     System.Threading.Thread.Sleep(60000);

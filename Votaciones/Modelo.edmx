@@ -151,6 +151,10 @@
           </ReturnType>
         </Function>
         <Function Name="crearSemana" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getVetacionByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idcomensal" Type="int" Mode="In" />
+          <Parameter Name="idsemana" Type="int" Mode="In" />
+        </Function>
         <Function Name="getVotacionByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idcomensal" Type="int" Mode="In" />
           <Parameter Name="idsemana" Type="int" Mode="In" />
@@ -165,6 +169,9 @@
               </RowType>
             </CollectionType>
           </ReturnType>
+        </Function>
+        <Function Name="setVetacionComensalSemana" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vetacion" Type="xml" Mode="In" />
         </Function>
         <Function Name="setVotacionComensalSemana" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="votacion" Type="xml" Mode="In" />
@@ -246,7 +253,14 @@
             <End Role="VotacionesSemanales" EntitySet="VotacionesSemanales" />
           </AssociationSet>
           <FunctionImport Name="cerrarSemana" ReturnType="Collection(Int32)">
-            <Parameter Name="idSemana" Mode="In" Type="Int32" />
+          <Parameter Name="idSemana" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getVetacionByUser" ReturnType="Collection(VotacionBaresModel.getVetacionByUser_Result)">
+            <Parameter Name="idcomensal" Mode="In" Type="Int32" />
+            <Parameter Name="idsemana" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="setVetacionComensalSemana" ReturnType="Collection(Int32)">
+            <Parameter Name="vetacion" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="getVotacionByUser_Result">
@@ -397,6 +411,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="getVetacionByUser_Result">
+          <Property Type="Int32" Name="idvotacion" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="descripcion" Nullable="true" MaxLength="2000" />
+          <Property Type="Boolean" Name="Votacion" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -506,6 +526,17 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="cerrarSemana" FunctionName="VotacionBaresModel.Store.cerrarSemana" />
+          <FunctionImportMapping FunctionImportName="getVetacionByUser" FunctionName="VotacionBaresModel.Store.getVetacionByUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VotacionBaresModel.getVetacionByUser_Result">
+                <ScalarProperty Name="idvotacion" ColumnName="idvotacion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="Votacion" ColumnName="Votacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="setVetacionComensalSemana" FunctionName="VotacionBaresModel.Store.setVetacionComensalSemana" />
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

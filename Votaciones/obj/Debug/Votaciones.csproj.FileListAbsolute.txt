@@ -79,6 +79,6 @@ C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Newtonsoft.Json.xml
 C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\inetpub\wwwroot\Votaciones\Votaciones\bin\es\System.Web.Optimization.resources.dll
 C:\inetpub\wwwroot\Votaciones\Votaciones\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
-C:\inetpub\wwwroot\Votaciones\Votaciones\obj\Debug\Votaciones.csprojResolveAssemblyReference.cache
 C:\inetpub\wwwroot\Votaciones\Votaciones\obj\Debug\Votaciones.dll
 C:\inetpub\wwwroot\Votaciones\Votaciones\obj\Debug\Votaciones.pdb
+C:\inetpub\wwwroot\Votaciones\Votaciones\obj\Debug\Votaciones.csprojResolveAssemblyReference.cache

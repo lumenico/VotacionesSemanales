@@ -99,5 +99,27 @@ namespace Votaciones
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("cerrarSemana", idSemanaParameter);
         }
+    
+        public virtual ObjectResult<getVetacionByUser_Result> getVetacionByUser(Nullable<int> idcomensal, Nullable<int> idsemana)
+        {
+            var idcomensalParameter = idcomensal.HasValue ?
+                new ObjectParameter("idcomensal", idcomensal) :
+                new ObjectParameter("idcomensal", typeof(int));
+    
+            var idsemanaParameter = idsemana.HasValue ?
+                new ObjectParameter("idsemana", idsemana) :
+                new ObjectParameter("idsemana", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getVetacionByUser_Result>("getVetacionByUser", idcomensalParameter, idsemanaParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> setVetacionComensalSemana(string vetacion)
+        {
+            var vetacionParameter = vetacion != null ?
+                new ObjectParameter("vetacion", vetacion) :
+                new ObjectParameter("vetacion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("setVetacionComensalSemana", vetacionParameter);
+        }
     }
 }

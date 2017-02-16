@@ -13,7 +13,12 @@
         {
             background-color:#7eff47 !important;
             border: 1px solid #12b000 !important;
-        }                         
+        }     
+       .itemSelectedVetao                    
+       {
+            background-color:#ff7d7d !important;
+            border: 1px solid #12b000 !important;
+       }
     </style>
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>

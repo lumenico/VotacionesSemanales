@@ -104,5 +104,16 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="cerrarSemana" FunctionName="VotacionBaresModel.Store.cerrarSemana" />
+    <FunctionImportMapping FunctionImportName="getVetacionByUser" FunctionName="VotacionBaresModel.Store.getVetacionByUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VotacionBaresModel.getVetacionByUser_Result">
+          <ScalarProperty Name="idvotacion" ColumnName="idvotacion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="Votacion" ColumnName="Votacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="setVetacionComensalSemana" FunctionName="VotacionBaresModel.Store.setVetacionComensalSemana" />
   </EntityContainerMapping>
 </Mapping>

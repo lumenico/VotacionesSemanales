@@ -1,13 +1,15 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Votaciones._Default" EnableEventValidation="" %>
 
 <%@ Register Src="~/Controls/SemanaActual.ascx" TagPrefix="uc1" TagName="SemanaActual" %>
+<%@ Register Src="~/Controls/Vxtaciones.ascx" TagPrefix="uc1" TagName="Vxtaciones" %>
+
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron row">
         <div class="col-lg-3 text-center">
             <uc1:SemanaActual runat="server" ID="SemanaActual" />
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-8">
             <h1>Seguimiento para una buena dieta</h1>
             <p class="lead">Wiiii</p>
             <p><a href="https://www.youtube.com/watch?v=Inj2Ch-oIX8" class="btn btn-primary btn-lg">Aprende a romper huevos</a></p>
@@ -18,7 +20,7 @@
         <li class="active"><a data-toggle="tab" href="#portada">Inicio</a></li>
         <li><a data-toggle="tab" href="#reglas">Reglas</a></li>
         <li><a data-toggle="tab" href="#votaciones">Votaciones</a></li>
-        <li><a data-toggle="tab" href="#vetaciones">Vetaciones</a></li>
+        <li id="liVetaciones" runat="server" visible="false"><a data-toggle="tab" href="#vetaciones" >Vetaciones</a></li>
         <li><a data-toggle="tab" href="#resultados" runat="server">Resultados</a></li>
     </ul>
     <div class="tab-content">
@@ -26,12 +28,11 @@
             <br />
             <div class="row">
                 <h2>Welcome bitches</h2>
-                <div class="col-lg-5">
-                    <img src="Img/ImgFront.PNG" style="border-radius: 50%" runat="server" id="imagenResultadoVotacion" width="420" height="315"/>
+                <div class="col-lg-6">
+                    <img src="Img/ImgFront.PNG" style="border-radius: 50%" runat="server" id="imagenResultadoVotacion" width="420" height="315" />
                 </div>
-                <div class="col-lg-5">
-                    <iframe width="420" height="315" style="border-radius: 50%"
-                        src="https://www.youtube.com/v/jPLJbSp6vKY"></iframe>
+                <div class="col-lg-6">
+                    <iframe width="420" height="315" style="border-radius: 50%" src="https://www.youtube.com/v/jPLJbSp6vKY"></iframe>
                 </div>
             </div>
         </div>
@@ -100,53 +101,10 @@
             </div>
         </div>
         <div id="votaciones" class="tab-pane fade">
-            <br />
-            <asp:UpdatePanel ID="upVotacion" runat="server" UpdateMode="Conditional">
-                <ContentTemplate>
-                    <div class="row">
-                        <asp:Repeater ID="gvVotaciones" runat="server" OnItemDataBound="gvVotaciones_ItemDataBound">
-                            <ItemTemplate>
-                                <div class="col-lg-3 col-md-3">
-                                    <asp:Panel CssClass="thumbnail" Style="margin-top: 10px; cursor: pointer;" ID="divItem" runat="server">
-                                        <asp:Image runat="server" ImageUrl='<%# Eval("Descripcion") %>' CssClass="group list-group-image" Style="height: 200px; width: 200px; border-radius: 35%" />
-                                        <asp:HiddenField runat="server" ID="hidNombre" Value='<%# Eval("idVotacion")%>' />
-                                        <div class="caption">
-                                            <h4 class="text-center">
-                                                <asp:Label
-                                                    runat="server"
-                                                    Text='<%# Eval("Nombre") %>'>
-                                                </asp:Label>
-                                            </h4>
-                                            <asp:CheckBox
-                                                OnCheckedChanged="CheckBox1_CheckedChanged"
-                                                ID="chkVoto"
-                                                runat="server"
-                                                AutoPostBack="true"
-                                                itemindex='<%# ((RepeaterItem)Container).ItemIndex %>'
-                                                Style="display: none;" />
-                                        </div>
-                                    </asp:Panel>
-                                </div>
-                            </ItemTemplate>
-                        </asp:Repeater>
-                    </div>
-                    <br />
-                    <div class="text-center row">
-                        <asp:Button ID="btnEnviarVotacion" runat="server" Text="VOTAR!!!" CssClass="btn-success btn-lg" OnClick="btnEnviarVotacion_Click" />
-                    </div>
-                </ContentTemplate>
-            </asp:UpdatePanel>
-            <asp:UpdateProgress ID="updateProgress" runat="server" AssociatedUpdatePanelID="upVotacion" DisplayAfter="1">
-                <ProgressTemplate>
-                    <div class="transparent">
-                        perra
-                        <asp:Image ID="imgUpdateProgress" runat="server" ImageUrl="~/img/loading.gif" AlternateText="Loading ..." ToolTip="Loading ..." Style="border-radius: 50%; position: fixed; bottom: 0; left: 0;" />
-                    </div>
-                </ProgressTemplate>
-            </asp:UpdateProgress>
+            <uc1:Vxtaciones runat="server" ID="ctrlVotaciones" tipo="Votacion" />
         </div>
-        <div id="vetaciones" class="tab-pane fade">
-            
+        <div id="divVvetaciones" class="tab-pane fade" runat="server" visible="false">
+            <uc1:Vxtaciones runat="server" ID="ctrlVetaciones" tipo="Vetacion" />
         </div>
         <asp:Panel ID="resultados" class="tab-pane fade" runat="server" ClientIDMode="static">
             <br />
@@ -156,7 +114,7 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div id="bares" runat="server" style="background-color:transparent;"/>
+                <div id="bares" runat="server" style="background-color: transparent;" />
             </div>
             <div class="row alert alert-info text-center" runat="server" id="contenedorAlfa">
                 <div class="row">
@@ -172,5 +130,5 @@
                 </div>
             </div>
         </asp:Panel>
-    </div>   
+    </div>
 </asp:Content>

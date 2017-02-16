@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using Votaciones.Core;
+using Votaciones.Utils;
 
 namespace Votaciones
 {
@@ -23,8 +24,9 @@ namespace Votaciones
         void Session_Start(object sender, EventArgs e)
         {
             var username = Context.User.Identity.Name.Split('\\')[1];
-            CurrentUser.set(username);
-            
+            CurrentUser user = new CurrentUser();
+            user.set(username);
+            Context.Session[GlobalConsts.C_CURRENTUSER] = user;            
         }
     }
 }

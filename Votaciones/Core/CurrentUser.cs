@@ -6,31 +6,35 @@ using System.Web;
 
 namespace Votaciones.Core
 {
+    [Serializable]
     public class CurrentUser
     {   
-        public static Comensales comensal;
-       
+        public  Comensales comensal;
+        public datosSemanaActual datosSemana;
+        [Serializable]
         public class datosSemanaActual
         {
-            public static SemanaComensal semanaComensal;
-            public static VotacionesSemanales votacionesSemanales;
-            public static bool? esGanador;
-            public static bool puedeVetar;
+            public  SemanaComensal semanaComensal;
+            public  VotacionesSemanales votacionesSemanales;
+            public  bool? esGanador;
+            public  bool puedeVetar;
         }
 
-        internal static void set(string username)
+        internal  void set(string username)
         {
             using (VotacionBaresEntities ve = new Votaciones.VotacionBaresEntities())
             {
-                comensal = ve.Comensales.ToList().Where(t => t.nombre.Trim() == username.Split(' ')[0]).ToList().FirstOrDefault();
+                comensal = ve.Comensales.ToList().Where(t => t.nombre.Trim().ToLower() == username.Split(' ')[0].ToLower()).ToList().FirstOrDefault();
                 var semanaAnterior = ve.Semanas.Where(t => t.numSemana == SemanasObserver.semanaActual.numSemana-1).FirstOrDefault();
+                this.datosSemana = new Core.CurrentUser.datosSemanaActual();
+                var semanaComensal = ve.SemanaComensal.ToList().Where(t => t.idSemana == semanaAnterior.idSemana && t.idComensal == comensal.IdComensal).FirstOrDefault();
+                this.datosSemana.esGanador = semanaComensal?.ganador;
                 
-                datosSemanaActual.esGanador = ve.SemanaComensal.Where(t => t.idSemana == SemanasObserver.semanaActual.idSemana && t.idComensal == comensal.IdComensal).ToList().FirstOrDefault()?.ganador;
-                datosSemanaActual.puedeVetar = ve.SemanaComensal.Where(t => t.idSemana == semanaAnterior.idSemana && t.idComensal == comensal.IdComensal).ToList().FirstOrDefault().ganador &&
+                this.datosSemana.puedeVetar = semanaComensal != null ? semanaComensal.ganador : false &&
                                                !SemanasObserver.semanaActual.cerrada;
 
-                datosSemanaActual.semanaComensal = ve.SemanaComensal.Where(t => t.idSemana == SemanasObserver.semanaActual.idSemana && t.idComensal == comensal.IdComensal).ToList().FirstOrDefault();
-                datosSemanaActual.votacionesSemanales = ve.VotacionesSemanales.Where(t => t.idSemana == SemanasObserver.semanaActual.idSemana && t.idComensal == comensal.IdComensal).ToList().FirstOrDefault();
+                this.datosSemana.semanaComensal = ve.SemanaComensal.Where(t => t.idSemana == SemanasObserver.semanaActual.idSemana && t.idComensal == comensal.IdComensal).ToList().FirstOrDefault();
+                this.datosSemana.votacionesSemanales = ve.VotacionesSemanales.Where(t => t.idSemana == SemanasObserver.semanaActual.idSemana && t.idComensal == comensal.IdComensal).ToList().FirstOrDefault();
             }
         }
     }
