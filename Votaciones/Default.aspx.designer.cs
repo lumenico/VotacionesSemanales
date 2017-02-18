@@ -40,6 +40,15 @@ namespace Votaciones {
         protected global::System.Web.UI.HtmlControls.HtmlImage imagenResultadoVotacion;
         
         /// <summary>
+        /// Control Historico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::Votaciones.Controls.Historico Historico;
+        
+        /// <summary>
         /// Control ctrlVotaciones.
         /// </summary>
         /// <remarks>

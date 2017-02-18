@@ -84,6 +84,7 @@ time.icon {
     top: 0;
     left: 0;
     z-index: 1;
+    padding:40px;
 }
 
 .backgroundLooser {
@@ -197,4 +198,11 @@ time.icon {
     top:0;
     left:0;
     z-index:100;
+}
+
+.imgHistoricoHeight{
+    width:100%;
+    text-align:center;
+    border-radius:10%;
+
 }

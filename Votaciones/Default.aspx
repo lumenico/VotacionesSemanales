@@ -2,6 +2,8 @@
 
 <%@ Register Src="~/Controls/SemanaActual.ascx" TagPrefix="uc1" TagName="SemanaActual" %>
 <%@ Register Src="~/Controls/Vxtaciones.ascx" TagPrefix="uc1" TagName="Vxtaciones" %>
+<%@ Register Src="~/Controls/Historico.ascx" TagPrefix="uc1" TagName="Historico" %>
+
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -17,7 +19,8 @@
     </div>
     <%--  --%>
     <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#portada">Inicio</a></li>
+         <li class="active"><a data-toggle="tab" href="#pruebas">Pruebas</a></li>
+        <!--<li ><a data-toggle="tab" href="#portada">Inicio</a></li>-->
         <li><a data-toggle="tab" href="#reglas">Reglas</a></li>
         <li><a data-toggle="tab" href="#votaciones">Votaciones</a></li>
         <li id="liVetaciones" runat="server" visible="false"><a data-toggle="tab" href="#vetaciones" >Vetaciones</a></li>
@@ -100,6 +103,9 @@
                 </div>
             </div>
         </div>
+        <div id="pruebas" class="tab-pane fade">
+            <uc1:Historico runat="server" ID="Historico" />
+        </div>
         <div id="votaciones" class="tab-pane fade">
             <uc1:Vxtaciones runat="server" ID="ctrlVotaciones" tipo="Votacion" />
         </div>
@@ -131,4 +137,5 @@
             </div>
         </asp:Panel>
     </div>
+  
 </asp:Content>

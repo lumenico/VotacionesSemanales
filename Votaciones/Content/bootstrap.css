@@ -58,7 +58,9 @@ html {
 }
 
 body {
-  margin: 0;
+  border-image: url(rounded-edge.png) 25% repeat;
+  border-width: 25px;
+  margin:0;
 }
 
 a:focus {
