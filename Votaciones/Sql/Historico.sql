@@ -55,8 +55,10 @@ group by
 
 ;WITH CTE_GRAL AS (
 		SELECT 
-			B.IDBAR 'IDBAR', 
+			B.IDBAR,
+			b.nombre as nombreBar,
 			s.idsemana,
+			s.nombre as nombreSemana,
 			sum(convert(int,votacion)) AS 'VOTOS'
 		FROM 
 			VOTACIONESSEMANALES V
@@ -68,17 +70,23 @@ group by
 			(V.VOTACION = 1)
 		GROUP BY 
 			B.IDBAR,
-			s.idsemana
+			b.nombre ,
+			s.idsemana,
+			s.nombre 
 		)	
 	SELECT 
 		l.IDBAR, 
+		l.nombreSemana,
 		l.idsemana,		
+		l.nombreBar,
 		max(VOTOS) as votos
 	FROM 
 		CTE_GRAL L		
 	GROUP BY 
-		l.idsemana,
-		l.idbar
+		l.IDBAR, 
+		l.nombreSemana,
+		l.idsemana,		
+		l.nombreBar
 	--where
 		--idsemana = @idsemana
 		--idbar = @idbar
