@@ -139,5 +139,17 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="comensalGanoXVeces" FunctionName="VotacionBaresModel.Store.comensalGanoXVeces">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VotacionBaresModel.comensalGanoXVeces_Result">
+          <ScalarProperty Name="nombreSemana" ColumnName="nombreSemana" />
+          <ScalarProperty Name="idsemana" ColumnName="idsemana" />
+          <ScalarProperty Name="nombreComensal" ColumnName="nombreComensal" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="votos" ColumnName="votos" />
+          <ScalarProperty Name="IdComensal" ColumnName="IdComensal" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

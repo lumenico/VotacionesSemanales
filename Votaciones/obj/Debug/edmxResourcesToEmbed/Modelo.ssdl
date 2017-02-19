@@ -148,6 +148,9 @@
       </CollectionType>
     </ReturnType>
   </Function>
+  <Function Name="comensalGanoXVeces" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idcomensal" Type="int" Mode="In" />
+  </Function>
   <Function Name="crearSemana" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="getVetacionByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idcomensal" Type="int" Mode="In" />

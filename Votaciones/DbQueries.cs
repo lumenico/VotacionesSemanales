@@ -22,5 +22,13 @@ namespace Votaciones
                 return ve.barGanoXVeces(idBar).ToList();
             }
         }
+
+        public static List<comensalGanoXVeces_Result> comensalGanoXVeces(int? idComensal)
+        {
+            using (VotacionBaresEntities ve = new Votaciones.VotacionBaresEntities())
+            {
+                return ve.comensalGanoXVeces(idComensal).ToList();
+            }
+        }
     }
 }

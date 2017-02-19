@@ -60,6 +60,9 @@
     <FunctionImport Name="barGanoXVeces" ReturnType="Collection(VotacionBaresModel.barGanoXVeces_Result)">
       <Parameter Name="idBar" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="comensalGanoXVeces" ReturnType="Collection(VotacionBaresModel.comensalGanoXVeces_Result)">
+      <Parameter Name="idcomensal" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="getVotacionByUser_Result">
     <Property Type="Int32" Name="idvotacion" Nullable="false" />
@@ -230,5 +233,13 @@
     <Property Type="Int32" Name="idsemana" Nullable="false" />
     <Property Type="String" Name="nombreBar" Nullable="false" MaxLength="50" />
     <Property Type="Int32" Name="votos" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="comensalGanoXVeces_Result">
+    <Property Type="String" Name="nombreSemana" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="idsemana" Nullable="false" />
+    <Property Type="String" Name="nombreComensal" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="image" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="votos" Nullable="true" />
+    <Property Type="Int32" Name="IdComensal" Nullable="false" />
   </ComplexType>
 </Schema>

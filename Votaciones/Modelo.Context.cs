@@ -139,5 +139,14 @@ namespace Votaciones
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<barGanoXVeces_Result>("barGanoXVeces", idBarParameter);
         }
+    
+        public virtual ObjectResult<comensalGanoXVeces_Result> comensalGanoXVeces(Nullable<int> idcomensal)
+        {
+            var idcomensalParameter = idcomensal.HasValue ?
+                new ObjectParameter("idcomensal", idcomensal) :
+                new ObjectParameter("idcomensal", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<comensalGanoXVeces_Result>("comensalGanoXVeces", idcomensalParameter);
+        }
     }
 }

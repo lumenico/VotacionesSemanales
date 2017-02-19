@@ -134,6 +134,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Templates\itemComensal.html" />
+    <Content Include="Templates\menuHistoric.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <EntityDeploy Include="Modelo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Modelo.Designer.cs</LastGenOutput>
@@ -219,9 +224,6 @@
     <Content Include="Sql\Historico.sql" />
     <Content Include="Templates\itemBar.html" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -245,10 +247,14 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="AuxEntities\BarHistoric.cs" />
+    <Compile Include="AuxEntities\ComensalHistoric.cs" />
     <Compile Include="Bar.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="barGanoXVeces_Result.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="comensalGanoXVeces_Result.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Commands\getGlobalData.cs" />

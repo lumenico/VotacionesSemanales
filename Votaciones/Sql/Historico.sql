@@ -36,32 +36,7 @@ begin
 		c.nombre,b.nombre 
 end
 go
-
---Bares votados por semana
-select
-	b.idbar,
-	b.nombre,
-	s.idsemana,
-	s.nombre,
-	count(*)
-from
-	bar b
-	join VotacionesSemanales vc
-		on vc.idbar = b.idbar	
-	join comensales c
-		on c.IdComensal = vc.IdComensal
-	join semanas s
-		on s.idsemana = vc.idsemana
-where 
-	s.idsemana = 5
-	and votacion = 1
-group by
-	b.idbar,
-	b.nombre,
-	s.idsemana,
-	s.nombre
-	go
-	alter procedure barGanoXVeces(@idBar int)
+alter procedure barGanoXVeces(@idBar int)
 	as
 	begin
 --Restaurante ganador x veces
@@ -141,3 +116,100 @@ end
 		--s.idsemana
 	order by
 		c.nombre,b.nombre 
+--Bares votados por semana
+select
+	b.idbar,
+	b.nombre,
+	s.idsemana,
+	s.nombre,
+	count(*)
+from
+	bar b
+	join VotacionesSemanales vc
+		on vc.idbar = b.idbar	
+	join comensales c
+		on c.IdComensal = vc.IdComensal
+	join semanas s
+		on s.idsemana = vc.idsemana
+where 
+	s.idsemana = 5
+	and votacion = 1
+group by
+	b.idbar,
+	b.nombre,
+	s.idsemana,
+	s.nombre
+go
+--select 
+--	*
+--from
+--	semanacomensal
+--where
+--	ganador = 1
+
+alter procedure comensalGanoXVeces(@idcomensal int = null)
+as
+begin
+
+;WITH CTE_GRAL AS (
+		SELECT 
+			B.IDBAR,
+			b.nombre as nombreBar,
+			s.idsemana,
+			s.nombre as nombreSemana,
+			sum(convert(int,votacion)) AS 'VOTOS',
+			c.IdComensal,
+			c.nombre as nombreComensal,
+			c.image
+		FROM 
+			VOTACIONESSEMANALES V
+			JOIN SEMANAS S 
+				ON S.IDSEMANA = V.IDSEMANA
+			JOIN BAR B 
+				ON B.IDBAR = V.IDBAR
+			join SemanaComensal sc
+				on sc.idsemana = s.idsemana
+			join comensales c
+				on c.IdComensal = sc.idcomensal
+
+		WHERE 
+			(V.VOTACION = 1 and sc.ganador = 1)
+			and 1 = case when @idcomensal is null then 1
+						 when @idcomensal = c.idcomensal then 1
+						 else 0 end
+		GROUP BY 
+			B.IDBAR,
+			b.nombre ,
+			s.idsemana,
+			s.nombre,
+			c.nombre,
+			c.image,
+			c.IdComensal	)	
+
+	SELECT 
+		 
+		l.nombreSemana,
+		l.idsemana,		
+		l.IdComensal,
+		l.nombreComensal,
+		l.image,
+		max(VOTOS) as votos
+	FROM 
+		CTE_GRAL L	
+
+	GROUP BY 
+	
+		l.nombreSemana,
+		l.idsemana,		
+		l.IdComensal,
+		l.nombreComensal,
+		l.image	
+	HAVING 
+		MAX(VOTOS) = (SELECT MAX(VOTOS) FROM CTE_GRAL H where h.idSemana = l.idsemana)
+	order by
+		idsemana,nombrecomensal
+end
+
+
+
+

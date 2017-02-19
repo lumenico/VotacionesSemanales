@@ -51,7 +51,6 @@ C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\System.Reflection.Metadata.d
 C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\vbc.exe
 C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\VBCSCompiler.exe
 C:\inetpub\wwwroot\Votaciones\Votaciones\bin\roslyn\VBCSCompiler.exe.config
-C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Votaciones.dll.config
 C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Votaciones.dll
 C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Votaciones.pdb
 C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Antlr3.Runtime.dll
@@ -82,3 +81,4 @@ C:\inetpub\wwwroot\Votaciones\Votaciones\bin\es\Microsoft.AspNet.FriendlyUrls.re
 C:\inetpub\wwwroot\Votaciones\Votaciones\obj\Debug\Votaciones.dll
 C:\inetpub\wwwroot\Votaciones\Votaciones\obj\Debug\Votaciones.pdb
 C:\inetpub\wwwroot\Votaciones\Votaciones\obj\Debug\Votaciones.csprojResolveAssemblyReference.cache
+C:\inetpub\wwwroot\Votaciones\Votaciones\bin\Votaciones.dll.config
