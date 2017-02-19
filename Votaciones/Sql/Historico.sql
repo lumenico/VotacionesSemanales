@@ -1,31 +1,41 @@
--- Votaciones de bares por comensales siempre
-select 
-	c.IdComensal,
-	c.nombre,
-	c.image,
-	b.idbar,
-	b.nombre,
-	--s.idsemana,
-	count(*) as votos
-from
-	comensales c 
-	join VotacionesSemanales vc
-		on vc.idComensal = c.IdComensal
-	join bar b
-		on b.idbar = vc.idBar
-	join semanas s
-		on s.idsemana = vc.idsemana
-where 
-	votacion = 1
-group by
-	c.IdComensal,
-	c.nombre,
-	b.nombre,
-	c.image,
-	b.idbar
-	--s.idsemana
-order by
-	c.nombre,b.nombre 
+alter procedure votacionesBaresComensal(@idBar int =  null)
+as
+begin
+	-- Votaciones de bares por comensales siempre
+	select 
+		c.IdComensal,
+		c.nombre as nombreComensal,
+		c.image,
+		b.idbar,
+		b.nombre as nombreBar,
+		b.descripcion,
+		--s.idsemana,
+		count(*) as votos
+	from
+		comensales c 
+		join VotacionesSemanales vc
+			on vc.idComensal = c.IdComensal
+		join bar b
+			on b.idbar = vc.idBar
+		join semanas s
+			on s.idsemana = vc.idsemana
+	where 
+		votacion = 1
+		and 1 = case when b.idBar = @idBar then 1
+					 when @idBar is null then 1
+					 else 0 end
+	group by
+		b.descripcion,
+		c.IdComensal,
+		c.nombre,
+		b.nombre,
+		c.image,
+		b.idbar
+		--s.idsemana
+	order by
+		c.nombre,b.nombre 
+end
+go
 
 --Bares votados por semana
 select
@@ -50,8 +60,11 @@ group by
 	b.nombre,
 	s.idsemana,
 	s.nombre
-
---Restaurante ganador cada semana
+	go
+	alter procedure barGanoXVeces(@idBar int)
+	as
+	begin
+--Restaurante ganador x veces
 
 ;WITH CTE_GRAL AS (
 		SELECT 
@@ -81,16 +94,50 @@ group by
 		l.nombreBar,
 		max(VOTOS) as votos
 	FROM 
-		CTE_GRAL L		
+		CTE_GRAL L	
+	--where
+		--idsemana = @idsemana
+		--1 = case when @idbar is null then 1
+		--		 when l.idBar = @idBar then 1
+		--		 else 0 end	
 	GROUP BY 
 		l.IDBAR, 
 		l.nombreSemana,
 		l.idsemana,		
-		l.nombreBar
-	--where
-		--idsemana = @idsemana
-		--idbar = @idbar
+		l.nombreBar	
 	HAVING 
 		MAX(VOTOS) = (SELECT MAX(VOTOS) FROM CTE_GRAL H where h.idSemana = l.idsemana)
 	order by
-		idbar,idsemana
+		idsemana,idbar
+
+end
+
+
+		select 
+		c.IdComensal,
+		c.nombre,
+		c.image,
+		b.idbar,
+		b.nombre,
+		--s.idsemana,
+		count(*) as votos
+	from
+		comensales c 
+		join VotacionesSemanales vc
+			on vc.idComensal = c.IdComensal
+		join bar b
+			on b.idbar = vc.idBar
+		join semanas s
+			on s.idsemana = vc.idsemana
+	where 
+		votacion = 1
+	
+	group by
+		c.IdComensal,
+		c.nombre,
+		b.nombre,
+		c.image,
+		b.idbar
+		--s.idsemana
+	order by
+		c.nombre,b.nombre 

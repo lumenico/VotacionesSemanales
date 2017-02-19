@@ -120,6 +120,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="barGanoXVeces" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idBar" Type="int" Mode="In" />
+  </Function>
   <Function Name="cerrarSemana" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idSemana" Type="int" Mode="In" />
   </Function>
@@ -170,6 +173,9 @@
   </Function>
   <Function Name="setVotacionComensalSemana" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="votacion" Type="xml" Mode="In" />
+  </Function>
+  <Function Name="votacionesBaresComensal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idBar" Type="int" Mode="In" />
   </Function>
   <EntityContainer Name="VotacionBaresModelStoreContainer">
     <EntitySet Name="Bar" EntityType="Self.Bar" Schema="dbo" store:Type="Tables" />

@@ -121,5 +121,23 @@ namespace Votaciones
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("setVetacionComensalSemana", vetacionParameter);
         }
+    
+        public virtual ObjectResult<votacionesBaresComensal_Result> votacionesBaresComensal(Nullable<int> idBar)
+        {
+            var idBarParameter = idBar.HasValue ?
+                new ObjectParameter("idBar", idBar) :
+                new ObjectParameter("idBar", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<votacionesBaresComensal_Result>("votacionesBaresComensal", idBarParameter);
+        }
+    
+        public virtual ObjectResult<barGanoXVeces_Result> barGanoXVeces(Nullable<int> idBar)
+        {
+            var idBarParameter = idBar.HasValue ?
+                new ObjectParameter("idBar", idBar) :
+                new ObjectParameter("idBar", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<barGanoXVeces_Result>("barGanoXVeces", idBarParameter);
+        }
     }
 }

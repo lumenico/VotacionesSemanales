@@ -115,5 +115,29 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="setVetacionComensalSemana" FunctionName="VotacionBaresModel.Store.setVetacionComensalSemana" />
+    <FunctionImportMapping FunctionImportName="votacionesBaresComensal" FunctionName="VotacionBaresModel.Store.votacionesBaresComensal">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VotacionBaresModel.votacionesBaresComensal_Result">
+          <ScalarProperty Name="IdComensal" ColumnName="IdComensal" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="idbar" ColumnName="idbar" />
+          <ScalarProperty Name="votos" ColumnName="votos" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombreComensal" ColumnName="nombreComensal" />
+          <ScalarProperty Name="nombreBar" ColumnName="nombreBar" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="barGanoXVeces" FunctionName="VotacionBaresModel.Store.barGanoXVeces">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VotacionBaresModel.barGanoXVeces_Result">
+          <ScalarProperty Name="IDBAR" ColumnName="IDBAR" />
+          <ScalarProperty Name="nombreSemana" ColumnName="nombreSemana" />
+          <ScalarProperty Name="idsemana" ColumnName="idsemana" />
+          <ScalarProperty Name="nombreBar" ColumnName="nombreBar" />
+          <ScalarProperty Name="votos" ColumnName="votos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -19,7 +19,7 @@ body {
 
 .tab-content ul, .tab-content li {
     width: 100%;
-    list-style-type: georgian;
+    list-style-type: none;
 }
 
 /* Wrapping element */
@@ -202,7 +202,26 @@ time.icon {
 
 .imgHistoricoHeight{
     width:100%;
+    height:300px;
     text-align:center;
     border-radius:10%;
+}
 
+.minithumb {
+    width:50px;
+    height:50px;
+    margin:0 auto;
+}
+.box-shadowed{
+    -webkit-box-shadow: -5px 1px 5px -3px #616161;
+    box-shadow: -5px 1px 5px -3px #616161;
+    padding-bottom:50px;
+}
+
+.ultrabadge {
+    font-size: 150px;
+    background-color: green;
+    border-radius: 100%;
+    color: white;
+ 
 }

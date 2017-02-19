@@ -217,6 +217,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="Sql\Historico.sql" />
+    <Content Include="Templates\itemBar.html" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -243,9 +244,14 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="AuxEntities\BarHistoric.cs" />
     <Compile Include="Bar.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="barGanoXVeces_Result.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\getGlobalData.cs" />
     <Compile Include="Controls\Historico.ascx.cs">
       <DependentUpon>Historico.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -303,6 +309,7 @@
     <Compile Include="Core\ConfigurationManagerExtended.cs" />
     <Compile Include="Core\CurrentUser.cs" />
     <Compile Include="Core\SemanasObserver.cs" />
+    <Compile Include="DbQueries.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -374,6 +381,9 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="votacionesBaresComensal_Result.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="VotacionesSemanales.cs">
       <DependentUpon>Modelo.tt</DependentUpon>

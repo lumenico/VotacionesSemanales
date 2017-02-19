@@ -1,0 +1,39 @@
+﻿<div class="container-fluid">
+    <div>
+        <div class="row" id="culo">
+            <div class="col-md-offset-1 col-md-3">
+                <div class="row">
+                    <h2 class="text-center">
+                        {{item.bar.nombre}}
+                    </h2>
+                    <p>
+                        <img src="{{item.bar.descripcion}}" class="imgHistoricoHeight " />
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2 class="text-center">Quienes le votan</h2>
+                <div class="row text-center">
+                    <div ng-repeat="item in item.listaVotaciones" class="col-md-6 text-center">
+                        <ul class="inline text-center">
+                            <li class="text-center"><img src="{{item.image}}" class="thumbnail minithumb " /></li>
+                            <li class="text-center"><label>{{item.nombreComensal}}</label></li>
+                            <li class="text-center"><label>{{item.votos}}</label></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <h2 class="text-center">Ganador</h2>
+                <br />
+                <div class="row">
+                 <div class="col-md-offset-2 col-md-8"><h1 class="ultrabadge">{{item.bar.vecesGanador}}</h1></div>
+                </div>
+                <br />
+                <h2 class="text-center">Veces</h2>
+            </div>
+            <div class="offset-col-md-1">
+            </div>
+        </div>
+    </div>
+</div>

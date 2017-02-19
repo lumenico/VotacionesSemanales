@@ -19,7 +19,7 @@
     </div>
     <%--  --%>
     <ul class="nav nav-tabs">
-         <li class="active"><a data-toggle="tab" href="#pruebas">Pruebas</a></li>
+        <li class="active"><a data-toggle="tab" href="#pruebas">Pruebas</a></li>
         <!--<li ><a data-toggle="tab" href="#portada">Inicio</a></li>-->
         <li><a data-toggle="tab" href="#reglas">Reglas</a></li>
         <li><a data-toggle="tab" href="#votaciones">Votaciones</a></li>
